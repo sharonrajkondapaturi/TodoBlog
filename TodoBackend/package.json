@@ -5,16 +5,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sharonrajkondapaturi/TodoBlog.git"
-  },
-  "author": "SharonRaj",
+  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/sharonrajkondapaturi/TodoBlog/issues"
-  },
-  "homepage": "https://github.com/sharonrajkondapaturi/TodoBlog#readme",
   "description": "",
   "dependencies": {
     "body-parser": "^1.20.2",
