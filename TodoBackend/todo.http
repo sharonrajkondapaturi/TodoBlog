@@ -1,0 +1,35 @@
+###
+
+GET http://localhost:3000/todo/?priority=&search=CRICKET
+
+
+###
+
+POST http://localhost:3000/updateTodo
+Content-Type: application/json 
+
+{
+    "todoName":"WATCH TV",
+    "task1":"Watch IPL Match at 7.30 PM everyday",
+    "task2":"Watch Ayan Movie to Friday at 9.00 AM ",
+    "task3":"Watch ShinChan Monday to Friday at 4.00 PM",
+    "priority":"LOW"
+}
+
+###
+
+PUT http://localhost:3000/addTodo/1
+Content-Type: application/json 
+
+{
+    "todoName":"LEARN REACTJS",
+    "task1":"In Reactjs learn Class Components",
+    "task2":"In Reactjs learn Hook's Concept",
+    "task3":"In Reactjs learn How to implement Third-party-package",
+    "priority":"HIGH"
+}
+
+###
+
+
+DELETE http://localhost:3000/deleteTodo/6
