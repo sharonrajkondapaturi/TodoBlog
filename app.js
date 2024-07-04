@@ -34,7 +34,8 @@ const todoList = (eachTodo)=>{
         task1:eachTodo.task1,
         task2:eachTodo.task2,
         task3:eachTodo.task3,
-        priority:eachTodo.priority
+        priority:eachTodo.priority,
+        accomplished:eachTodo.accomplished
     }
 }
 
@@ -47,19 +48,19 @@ app.get('/todo',async(request,response)=>{
     const todoArray = await db.all(getTodoQuery)
     response.send(todoArray.map(eachTodo=> todoList(eachTodo)))
 })
-app.post('/updateTodo',async(request,response)=>{
-    const {todoName,task1,task2,task3,priority} = request.body
-    const todoQuery = `INSERT INTO todo(todoName,task1,task2,task3,priority) VALUES ("${todoName}","${task1}","${task2}","${task3}","${priority}");`
+app.post('/addTodo',async(request,response)=>{
+    const {todoName,task1,task2,task3,priority,accomplished} = request.body
+    const todoQuery = `INSERT INTO todo(todoName,task1,task2,task3,priority,accomplished) VALUES ("${todoName}","${task1}","${task2}","${task3}","${priority}","${accomplished}");`
     await db.run(todoQuery)
     const getTodoQuery = `SELECT * from todo;`
     const todoArray = await db.all(getTodoQuery)
     response.send(todoArray.map(eachTodo=> todoList(eachTodo)))
 })
 
-app.put('/addTodo/:id',async(request,response)=>{
-    const {todoName,task1,task2,task3,priority} = request.body
+app.put('/updateTodo/:id',async(request,response)=>{
+    const {todoName,task1,task2,task3,priority,accomplished} = request.body
     const {id} = request.params
-    const todoQuery = `UPDATE todo SET todoName="${todoName}",task1="${task1}",task2="${task2}",task3="${task3}",priority="${priority}" 
+    const todoQuery = `UPDATE todo SET todoName="${todoName}",task1="${task1}",task2="${task2}",task3="${task3}",priority="${priority}",accomplished="${accomplished}" 
     WHERE id = ${id};`
     await db.run(todoQuery)
     const getTodoQuery = `SELECT * from todo;`

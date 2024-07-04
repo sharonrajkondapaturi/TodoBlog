@@ -5,7 +5,7 @@ GET http://localhost:4000/todo/?priority=&search=
 
 ###
 
-POST http://localhost:4000/updateTodo
+POST http://localhost:4000/addTodo
 Content-Type: application/json 
 
 {
@@ -13,23 +13,25 @@ Content-Type: application/json
     "task1":"Watch IPL Match at 7.30 PM everyday",
     "task2":"Watch Ayan Movie to Friday at 9.00 AM ",
     "task3":"Watch ShinChan Monday to Friday at 4.00 PM",
-    "priority":"LOW"
+    "priority":"LOW",
+    "accomplished":"Yes"
 }
 
 ###
 
-PUT http://localhost:4000/addTodo/3
+PUT http://localhost:4000/updateTodo/7
 Content-Type: application/json 
 
-  {
-    "todoName": "PLAY ACCOUSTIC GUITAR",
-    "task1": "Practice fingerstyling lessons for 1 Month",
-    "task2": "Practice Open Chords for 6 Month's",
-    "task3": "Try to Complete Grade1 and Grade3 by this Year",
-    "priority": "HIGH"
-  }
+{
+    "todoName":"WATCH TV",
+    "task1":"Watch IPL Match at 7.30 PM everyday",
+    "task2":"Watch Ayan Movie to Friday at 9.00 AM ",
+    "task3":"Watch ShinChan Monday to Friday at 4.00 PM",
+    "priority":"LOW",
+    "accomplished":"No"
+}
 
 ###
 
 
-DELETE http://localhost:4000/deleteTodo/6
+DELETE http://localhost:4000/deleteTodo/7
