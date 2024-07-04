@@ -33,5 +33,19 @@ Content-Type: application/json
 
 ###
 
+PUT http://localhost:4000/updateAccomplished/5
+Content-Type: application/json 
+
+{
+    "todoName":"WATCH TV",
+    "task1":"Watch IPL Match at 7.30 PM everyday",
+    "task2":"Watch Ayan Movie to Friday at 9.00 AM ",
+    "task3":"Watch ShinChan Monday to Friday at 4.00 PM",
+    "priority":"LOW",
+    "accomplished":"Yes"
+}
+
+###
+
 
 DELETE http://localhost:4000/deleteTodo/7

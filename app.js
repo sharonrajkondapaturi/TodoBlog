@@ -68,6 +68,16 @@ app.put('/updateTodo/:id',async(request,response)=>{
     response.send(todoArray.map(eachTodo=> todoList(eachTodo)))
 })
 
+app.put('/updateAccomplished/:id',async(request,response)=>{
+    const {accomplished} = request.body
+    const {id} = request.params
+    const todoQuery = `UPDATE todo SET accomplished="${accomplished}" WHERE id = ${id};`
+    await db.run(todoQuery)
+    const getTodoQuery = `SELECT * from todo;`
+    const todoArray = await db.all(getTodoQuery)
+    response.send(todoArray.map(eachTodo=> todoList(eachTodo)))
+})
+
 app.delete('/deleteTodo/:id',async(request,response)=>{
     const {id} = request.params 
     const todoQuery = `DELETE FROM todo WHERE id=${id};`
