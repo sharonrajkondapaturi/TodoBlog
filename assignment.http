@@ -1,0 +1,57 @@
+###
+
+POST http://localhost:4000/register
+Content-Type: application/json
+
+{
+    "username":"Abishek",
+    "password":"failure"
+}
+
+###
+
+POST http://localhost:4000/login
+Content-Type: application/json
+
+{
+    "username":"SharonRaj",
+    "password":"84249418"
+}
+
+###
+
+POST http://localhost:4000/todos
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJTaGFyb25SYWoiLCJpYXQiOjE3MjI2MjA2ODR9.dNu4H7b-rDIDUPE6IgjvTuj9_oz9mJCF3fdyGfZkWg8
+
+{
+    "todo": "Buld ",
+    "description": " skills and should be accurate",
+    "status": "Accomplished",
+    "priority": "HIGH"
+}
+
+###
+GET http://localhost:4000/todos/?priority=MEDIUM&search=Prepare
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJIYW5uYWgiLCJpYXQiOjE3MjI2MDE1NjJ9.K8J9wTv0xz3KxnQ6ZwMBSsGAB8yAP0xpWdld-j35jIk
+
+###
+
+PUT http://localhost:4000/todos/1
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJIYW5uYWgiLCJpYXQiOjE3MjI2MDE1NjJ9.K8J9wTv0xz3KxnQ6ZwMBSsGAB8yAP0xpWdld-j35jIk
+
+{
+    "todo": "Prepare for IELTS",
+    "description": "In order to prepare for the exam wake up early in the morning and study until evening 6pm take a break and start to study at 7pm to 9pm",
+    "status": "Accomplished",
+    "priority": "MEDIUM"
+}
+
+###
+
+DELETE http://localhost:4000/todos/5
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJTaGFyb25SYWoiLCJpYXQiOjE3MjI1ODc2NDV9.NEJ3XCFyIeihvVjUGRuko1z7ZsUMWcj0-LZ23YZaTJo
+
